@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="header_section">
+        <div class="inner_header_section">
+            <div class="logo">
+                <img src="./logo.png">
+            </div>
+            <div class="menu_search">
+                <ul class="menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">TV Shows</a></li>
+                    <li><a href="">Movies</a></li>
+                    <li><a href="">My List</a></li>
+                </ul>
+            </div>
+            <ul class="right_menu">
+                <li class="right_menu_list"><i class="fa fa-search"></i></li>
+                <li class="right_menu_list"><span>A</span></li>
+            </ul>
+        </div>
+    </header>
+    <div class="home_section">
+        <div class="inner_home_section">
+            <div class="slider slider-1 show ">
+                <div class="slider_content">
+                    <h2>Lucifer</h2>
+                    <p>Lucifer Morningstar has decided he's had enough of being the dutiful servant in Hell and decides
+                        to spend some time on Earth to better understand humanity. He settles in Los Angeles - the City
+                        of Angels.</p>
+                    <div class="button_div">
+                        <button class="watch home_button">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <p> More Info</p>
+                        </button>
+                        <button class="more_info home_button">
+                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                            <p> Play</p>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="slider slider-2 ">
+                <div class="slider_content">
+                    <h2>Kung Fu Panda</h2>
+                    <p>Legendary warrior Po teams up with an elite English knight on a global quest to rescue magical
+                        weapons, restore his reputation — and save the world!</p>
+                    <div class="button_div">
+                        <button class="watch home_button">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <p> More Info</p>
+                        </button>
+                        <button class="more_info home_button">
+                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                            <p> Play</p>
+                        </button>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="slider-points">
+                <span class="slider_1_point active"></span>
+                <span class="slider_1_point "></span>
+            </div>
+
+        </div>
+    </div>
+    <section class="popular_shows">
+        <div class="popular-on-netflix">
+            <h4>Popular On Netflix</h4>
+            <span class="movie-scroll-btn movie-scroll-left-btn" onclick="scrollshowleft(1)"><i class="fa fa-angle-left" aria-hidden="true"></i>
+            </span>
+            <div class="inner_popular_shows">
+                <div class="show_card">
+                    <img src="./tranding_on_netflix/all_of_us_dead.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./tranding_on_netflix/money_heist.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./tranding_on_netflix/rana_naidu.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./tranding_on_netflix/sex_life_poster.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./tranding_on_netflix/the-sandman.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./tranding_on_netflix/the-night-agent.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./tranding_on_netflix/wednesday.jpg">
+                </div>
+            </div>
+            <span class="movie-scroll-btn movie-scroll-right-btn" onclick="scrollshows(1)"><i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+        </div>
+        <div class="popular-on-netflix k-drama">
+            <h4>K- Drama</h4>
+            <span class="movie-scroll-btn movie-scroll-left-btn k-drama-left" onclick="scrollshowleft(2)"><i class="fa fa-angle-left" aria-hidden="true"></i>
+            </span>
+            <div class="inner_popular_shows">
+                <div class="show_card">
+                    <img src="./k_drama/bussiness_proposal.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./k_drama/crash_landing_on_you.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./k_drama/hometown_chacha.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./k_drama/its_ok_to_be_not_ok.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./k_drama/k-drama-bussiness-proposal.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./k_drama/trading_hounting _of_hill.jpg">
+                </div>
+                <div class="show_card">
+                    <img src="./k_drama/squid_game.jpg">
+                </div>
+            </div>
+            <span class="movie-scroll-btn movie-scroll-right-btn" onclick="scrollshows(2)"><i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+        </div>
+    </section>
+    <section class="subscribe_section">
+        <h3>There’s even more to watch.</h3>
+        <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals and more. Watch as much as you want, anytime you want.
+
+        </p>
+        <button>Join Now</button>
+    </section>
+    <script>
+        let slidevar=1;
+        function changeSlide(slider)
+        {
+            let sliderNo=document.querySelectorAll('.slider');
+            let sliderpoint=document.querySelectorAll('.slider-points span');
+            for(i=0;i<sliderNo.length;i++)
+            {
+                sliderNo[i].classList.remove('show')
+                sliderpoint[i].classList.remove('active')
+            }
+            if(slidevar>2)
+            {
+                slidevar=1;
+                slider=1;
+            }
+            sliderNo[slider-1].classList.add('show')
+            sliderpoint[slider-1].classList.add('active')
+        }
+        setInterval(()=>{
+            changeSlide(slidevar);
+            slidevar+=1;
+        },5000);
+
+        function scrollshows(number)
+        {
+            if(number==1)
+            {
+                let scrollableContent=document.querySelector('.inner_popular_shows');
+                if(scrollableContent.scrollLeft==0)
+                {
+                    document.querySelector('.movie-scroll-left-btn').style.opacity=1;
+                }
+                scrollableContent.scrollLeft+=700;
+            }
+            else
+            {
+                let kDramascrollableContent=document.querySelector('.k-drama .inner_popular_shows');
+                if(kDramascrollableContent.scrollLeft==0)
+                {
+                    document.querySelector('.k-drama-left').style.opacity=1;
+                }
+                kDramascrollableContent.scrollLeft+=700;
+            }
+        }
+
+        function scrollshowleft(number)
+        {
+            if(number==1)
+            {
+                let scrollableContent=document.querySelector('.inner_popular_shows');
+                if(scrollableContent.scrollLeft==0)
+                {
+                    document.querySelector('.movie-scroll-btn').style.opacity=0;
+                }
+                scrollableContent.scrollLeft-=700;
+            }
+            else
+            {
+                let kDramascrollableContent=document.querySelector('.k-drama .inner_popular_shows');
+                if(kDramascrollableContent.scrollLeft==0)
+                {
+                    document.querySelector('.k-drama-left').style.opacity=0;
+                }
+                kDramascrollableContent.scrollLeft-=700;
+            }
+        }
+    </script>
+</body>
+
+</html>
